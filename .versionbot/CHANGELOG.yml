@@ -1,4 +1,16 @@
 - commits:
+    - subject: Only run builds for non-native architectures on merge to master
+      hash: 0c7b7966b0bc127593a92ebd530481249f209715
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.0.4
+  date: 2018-12-19T15:02:13.137Z
+- commits:
     - subject: 'refactor: Convert update-lock module to typescript'
       hash: b977b30dfee0b9d309133c2569ffe6a9e5af783c
       body: ''
