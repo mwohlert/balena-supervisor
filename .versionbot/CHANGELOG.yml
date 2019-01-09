@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'fix: Use logind manager to request reboots and shutdowns'
+      hash: 81b17faab15a241bf0e99fc8856823fa687ea1e2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Closes: '#861'
+        closes: '#861'
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.2.11
+  date: 2019-01-09T11:24:46.466Z
+- commits:
     - subject: Fix context bind errors by switching to async/await
       hash: a970ec5377987bdc845a571c16514d3f15e8eadb
       body: ''
