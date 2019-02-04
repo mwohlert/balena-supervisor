@@ -1,4 +1,25 @@
 - commits:
+    - subject: 'Unpin terser, now that we can use CI'
+      hash: 286927fcbd936d778aa50951d5f085950d9a80ee
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Install newer npm in build to ensure the use of npm ci
+      hash: 2b23d4b2cc63d97f76f6decddadf07002d5f892b
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.7.0
+  date: 2019-02-04T16:29:18.310Z
+- commits:
     - subject: Pin terser version to avoid breaking change in minor update
       hash: 28d09f2772a224a4d2efb9dd35c333b21bbbc57a
       body: ''
