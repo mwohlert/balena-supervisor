@@ -1,4 +1,25 @@
 - commits:
+    - subject: Add the release to the status endpoint
+      hash: c0e68bb069741af72a57b4996e3d00cdda450748
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Add application status endpoint
+      hash: 769e2f3c519d0fa0f5d728c16f40a775ee255bf1
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.7.0
+  date: 2019-02-05T17:58:38.765Z
+- commits:
     - subject: Ensure the balena-fin always has it's overlay assigned
       hash: 2e09ed071c5d1c080b21303b45421cf65249f652
       body: ''
