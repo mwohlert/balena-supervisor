@@ -1,4 +1,18 @@
 - commits:
+    - subject: Don't consider leading whitespace in environment variables on compare
+      hash: d860d85b633aada78b621e776c0d3022efd1d021
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Closes: '#895'
+        closes: '#895'
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.7.2
+  date: 2019-02-08T14:32:49.321Z
+- commits:
     - subject: 'fix: Rework delete-then-download handling in state engine'
       hash: e9b51bbcd741fd65851190e73428d00ab18f7443
       body: |
