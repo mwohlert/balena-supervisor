@@ -1,4 +1,39 @@
 - commits:
+    - subject: 'debug: Print more information about failing validations'
+      hash: 4652e249878ee8beff1e8e8a37d8c5b9c29e0906
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: 'device-config: Add migration for SUPERVISOR_DELTA_APPLY_TIMEOUT'
+      hash: f04838d039633f025f582cd3c1cd8214aa32e494
+      body: |
+        The default value for the delta apply timeout was changed from `''` to
+        `'0'` (note strings as these are database values) - but if the value
+        existed in the database already, this would fail validation. We add a
+        migration which will look explcitily for the failing value and switch it
+        to the new default.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Increase max payload size in bodyparser to avoid PayloadTooLarge errors
+      hash: a278a7d62c82c6121b2e5adb30503b0bbfeb2078
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.8.5
+  date: 2019-02-25T10:56:19.344Z
+- commits:
     - subject: Increase max payload size in bodyparser to avoid PayloadTooLarge errors
       hash: a278a7d62c82c6121b2e5adb30503b0bbfeb2078
       body: ''
