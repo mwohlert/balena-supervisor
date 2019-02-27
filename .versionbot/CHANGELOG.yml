@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add migration for delta apply timeout without strict checking
+      hash: dd2a506d7734030c640369ccedf3575a2a348269
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.8.7
+  date: 2019-02-27T15:28:15.719Z
+- commits:
     - subject: 'debug: Print more information about failing validations'
       hash: 987de0e0975a7c468a3e2b606bb43e8dedcd2df8
       body: ''
