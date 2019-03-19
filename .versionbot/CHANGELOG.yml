@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'automation: Add missing pine-client-request library'
+      hash: 0e70ce6516f66dc70900f3b4cdd0b7c63b6548e8
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Gergely Imreh <gergely@balena.io>
+        signed-off-by: Gergely Imreh <gergely@balena.io>
+      author: Gergely Imreh
+  version: 9.11.1
+  date: 2019-03-19T10:13:03.334Z
+- commits:
     - subject: >-
         fix: Correct use of $expand to avoid an exception when updating from a
         legacy OS
