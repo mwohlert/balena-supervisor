@@ -1,4 +1,25 @@
 - commits:
+    - subject: Make delta application logs easier to parse for multicontainer
+      hash: 92d32467fdada31de21f232a383bc7010a02d7d6
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Upgrade to node 8 for supported architectures
+      hash: 28e8de1bf3e1a9574822d9922857e98cdc33aaac
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.15.0
+  date: 2019-05-08T12:20:48.105Z
+- commits:
     - subject: 'docs: make headers consistent'
       hash: acb38dfcfa8a7a658f083fe66455295bed503c51
       body: ''
