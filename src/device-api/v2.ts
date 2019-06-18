@@ -12,8 +12,11 @@ import {
 } from '../lib/messages';
 import { doPurge, doRestart, serviceAction } from './common';
 
+import { getJournald } from '../lib/journald';
+
 import log from '../lib/supervisor-console';
 import supervisorVersion = require('../lib/supervisor-version');
+import { checkInt, checkTruthy } from '../lib/validation';
 
 export function createV2Api(router: Router, applications: ApplicationManager) {
 	const { _lockingIfNecessary, deviceState } = applications;
@@ -468,6 +471,47 @@ export function createV2Api(router: Router, applications: ApplicationManager) {
 				status: 'failed',
 				message: messageFromError(e),
 			});
+		}
+	});
+
+	router.post('/v2/journal-logs', (req, res) => {
+		let statusSent = false;
+		try {
+			const all = checkTruthy(req.body.all) || false;
+			const follow = checkTruthy(req.body.follow) || false;
+			const count = checkInt(req.body.count, { positive: true }) || undefined;
+			const unit = req.body.unit;
+
+			const journald = getJournald({ all, follow, count, unit });
+
+			journald.on('logLine', msg => {
+				if (!statusSent) {
+					res.status(200);
+					statusSent = true;
+				}
+				res.write(`${JSON.stringify(msg)}\n`);
+			});
+			journald.on('stderrLine', line => {
+				if (!statusSent) {
+					res.status(500);
+				}
+				res.json({
+					status: 'failed',
+					message: `Journald stderr: ${line}`,
+				});
+			});
+			res.on('close', () => {
+				journald.end();
+			});
+			journald.on('disconnect', () => res.end());
+		} catch (e) {
+			if (!statusSent) {
+				res.status(500).json({
+					status: 'failed',
+					message: messageFromError(e),
+				});
+			}
+			log.error('There was an error streaming journald logs:', e);
 		}
 	});
 }

@@ -1152,3 +1152,88 @@ Response:
 	]
 }
 ```
+
+
+### V2 System Utilities
+
+#### Journald logs
+
+Added in supervisor version v9.18.0
+
+Get access to the journald logs from the device. The logs
+are parsed to extract certain information, and the original 
+log is included too. The original log format can be found
+[here](https://www.freedesktop.org/software/systemd/man/journalctl.html#%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20json%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20).
+The fields added by the supervisor are:
+```json
+{
+	"message": "A string representation of the message",
+	"priority": 3,
+	"name": "A best attempt at a name for the unit which produced the message",
+	"timestamp": "2019-06-21T10:08:00.607Z"
+}
+```
+
+Logs are streamed back in [NDJSON](http://ndjson.org/)
+format, and if follow is specified, this connection is never
+closed by the supervisor.
+
+Supported POST options are as follows:
+```typescript
+{
+	follow: true,
+	unit: string,
+	count: number,
+	all: boolean
+}
+```
+All fields are optional.
+
+From an application container:
+```
+$ curl -s -X POST --data '{ "follow": true, "count": 10, "unit": "balena"}' "$BALENA_SUPERVISOR_ADDRESS/v2/journal-logs?apikey=$BALENA_SUPERVISOR_API_KEY"
+```
+
+Response:
+```JSON
+{
+	"message": "This is a journald log",
+	"priority": 6,
+	"timestamp": "2019-06-21T10:24:00.197Z",
+	"name": "dropbear@1-fe80::2f68:98bf:10bd:a43:22222-fe80::2021:f1a5:53bc:8f46:47974.service",
+	"__CURSOR": "s=0d4508aefe364c829336b6e5cd00db6e;i=104d;b=40ff059264b74430a4b540f3d3738547;m=7007f905;t=58bd2dc5f9515;x=7760ac511f8e0287",
+	"__REALTIME_TIMESTAMP": "1561112640197909",
+	"__MONOTONIC_TIMESTAMP": "1879570693",
+	"_BOOT_ID": "40ff059264b74430a4b540f3d3738547",
+	"PRIORITY": "6",
+	"_UID": "0",
+	"_GID": "0",
+	"_CAP_EFFECTIVE": "3fffffffff",
+	"_MACHINE_ID": "3c9e0e46a30b4d9eab5b32eb697ea9b8",
+	"_HOSTNAME": "ab3d181",
+	"_TRANSPORT": "stdout",
+	"MESSAGE": "This is a journald log",
+	"_COMM": "cat",
+	"_SYSTEMD_CGROUP": "/system.slice/system-dropbear.slice/dropbear@1-fe80::2f68:98bf:10bd:a43:22222-fe80::2021:f1a5:53bc:8f46:47974.service",
+	"_SYSTEMD_UNIT": "dropbear@1-fe80::2f68:98bf:10bd:a43:22222-fe80::2021:f1a5:53bc:8f46:47974.service",
+	"_SYSTEMD_SLICE": "system-dropbear.slice",
+	"_SYSTEMD_INVOCATION_ID": "dba13abf52a543c6b66a665f7d37130d",
+	"_STREAM_ID": "a069e1e503f5415380d7adfa84ad1569",
+	"_PID": "18907"
+}
+{
+	"message": "This is a second journald log",
+	"priority": 6,
+	"timestamp": "2019-06-21T10:24:01.215Z",
+	"name": "dropbear@1-fe80::2f68:98bf:10bd:a43:22222-fe80::2021:f1a5:53bc:8f46:47974.service",
+	<snip>
+}
+{
+	"message": "This is a third journald log",
+	"priority": 6,
+	"timestamp": "2019-06-21T10:24:02.391Z",
+	"name": "dropbear@1-fe80::2f68:98bf:10bd:a43:22222-fe80::2021:f1a5:53bc:8f46:47974.service",
+	<snip>
+}
+
+```
