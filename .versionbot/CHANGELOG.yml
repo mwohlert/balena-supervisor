@@ -1,4 +1,39 @@
 - commits:
+    - subject: Restart udev service and reboot on udev rule change
+      hash: 7387b951c9d7d1709203a983f5dba5f9cf69896b
+      body: |
+        Also move udev handling code out to it's own module.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Allow the setting of udev rules from environment variables
+      hash: db23d526e56b5a9e8943ea663b5092cd0c066d3d
+      body: |
+        To do this we allow "SyntheticKeys" in the config module, which can
+        point to different structures on disk.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Closes: '#998'
+        closes: '#998'
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Allow writing test files in typescript
+      hash: 23794e6b3007fa6e5cfbf9570e7c6937f8628c6f
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.17.0
+  date: 2019-06-18T11:13:28.608Z
+- commits:
     - subject: Fix typo in image selection
       hash: 65019bb5bc11a31817a6ade7f904d02376146aef
       body: ''
