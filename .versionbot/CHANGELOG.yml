@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add an endpoint and module for reading journald logs
+      hash: fd97d556e8092c76369512083306fa2c529998ad
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Closes: '#1003'
+        closes: '#1003'
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.18.0
+  date: 2019-06-21T13:04:08.938Z
+- commits:
     - subject: Report device state in local mode
       hash: 024b9c45f493526d135a3e6926d0eda39c259446
       body: |
