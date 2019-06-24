@@ -1,4 +1,25 @@
 - commits:
+    - subject: Don't attempt to setup a log stream to the cloud before provision
+      hash: d6add0a33d5f4c0990c54b6707f12ea66aaf50ac
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+    - subject: Add more typescript conversions and export utilities from existing
+      hash: f3efada9c18a069f4eab95176f9372171e22e257
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Cameron Diver <cameron@balena.io>
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      author: Cameron Diver
+  version: 9.17.2
+  date: 2019-06-24T10:49:01.692Z
+- commits:
     - subject: Update the resinos version for the dind supervisor
       hash: f5aedffa055baa4037dc912db8962468e5f42b8b
       body: ''
