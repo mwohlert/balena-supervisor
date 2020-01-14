@@ -43,7 +43,7 @@ defaults: &defaults
             export EXTRA_TAG="${VERSION_TAG}"
           fi
           echo "Starting build.sh"
-          if [ "$DOCKER_PASSWORD" != "" ]; then
+          if [ "$DOCKER_PASS" != "" ]; then
             docker login --username $DOCKER_USER --password $DOCKER_PASS
             export PUSH_IMAGES=${PUSH_IMAGES}
           else
