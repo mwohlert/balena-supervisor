@@ -45,7 +45,7 @@ defaults: &defaults
           fi
           echo "Starting build.sh"
           if [ "$DOCKER_PASSWORD" != "" ]; then
-            docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+            docker login --username $DOCKER_USER --password $DOCKER_PASS
             export PUSH_IMAGES=${PUSH_IMAGES}
           else
             export PUSH_IMAGES=false
@@ -66,7 +66,6 @@ jobs:
   amd64:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: amd64
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -75,7 +74,6 @@ jobs:
   i386:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: i386
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -84,7 +82,6 @@ jobs:
   i386-nlp:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: i386-nlp
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -93,7 +90,6 @@ jobs:
   armv7hf:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: armv7hf
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -102,7 +98,6 @@ jobs:
   aarch64:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: aarch64
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -111,7 +106,6 @@ jobs:
   rpi:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: rpi
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -120,7 +114,6 @@ jobs:
   amd64-debug:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: amd64
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -129,7 +122,6 @@ jobs:
   i386-debug:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: i386
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -138,7 +130,6 @@ jobs:
   i386-nlp-debug:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: i386-nlp
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -147,7 +138,6 @@ jobs:
   armv7hf-debug:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: armv7hf
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -156,7 +146,6 @@ jobs:
   aarch64-debug:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: aarch64
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
@@ -165,7 +154,6 @@ jobs:
   rpi-debug:
     <<: *defaults
     environment:
-      DOCKER_USERNAME: travisciresin
       ARCH: rpi
       PUSH_IMAGES: 'true'
       STAGING_API_ENDPOINT: https://api.balena-staging.com
