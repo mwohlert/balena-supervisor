@@ -163,15 +163,4 @@ workflows:
   version: 2
   build_and_maybe_deploy:
     jobs:
-      - amd64
-      - i386
-      - rpi
       - armv7hf
-      - aarch64
-      - i386-nlp
-      - amd64-debug
-      - i386-debug
-      - rpi-debug
-      - armv7hf-debug
-      - aarch64-debug
-      - i386-nlp-debug
