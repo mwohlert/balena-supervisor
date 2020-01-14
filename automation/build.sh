@@ -39,15 +39,15 @@ if [ -z "$ARCH" ] || [ -z "$TAG" ]; then
 fi
 
 # This is the supervisor image we will produce
-TARGET_IMAGE=balena/$ARCH-supervisor:$TAG$DEBUG
+TARGET_IMAGE=mwohlert/$ARCH-supervisor:$TAG$DEBUG
 
 # Intermediate images and cache
-NODE_IMAGE=balena/$ARCH-supervisor-node:$TAG$DEBUG
-NODE_BUILD_IMAGE=balena/$ARCH-supervisor-node:$TAG-build$DEBUG
+NODE_IMAGE=mwohlert/$ARCH-supervisor-node:$TAG$DEBUG
+NODE_BUILD_IMAGE=mwohlert/$ARCH-supervisor-node:$TAG-build$DEBUG
 
-TARGET_CACHE_MASTER=balena/$ARCH-supervisor:master$DEBUG
-NODE_CACHE_MASTER=balena/$ARCH-supervisor-node:master$DEBUG
-NODE_BUILD_CACHE_MASTER=balena/$ARCH-supervisor-node:master-build$DEBUG
+TARGET_CACHE_MASTER=mwohlert/$ARCH-supervisor:master$DEBUG
+NODE_CACHE_MASTER=mwohlert/$ARCH-supervisor-node:master$DEBUG
+NODE_BUILD_CACHE_MASTER=mwohlert/$ARCH-supervisor-node:master-build$DEBUG
 
 CACHE_FROM=""
 function useCache() {
@@ -69,7 +69,7 @@ if [ -z "$DEBUG" ]; then
 	useCache $NODE_BUILD_CACHE_MASTER
 
 	docker pull balenalib/amd64-node:6-build &
-	docker pull balena/$ARCH-supervisor-base:v1.4.7 &
+	docker pull mwohlert/$ARCH-supervisor-base:v1.4.7 &
 fi
 # Pull images we depend on in parallel to avoid needing
 # to do it in serial during the build
