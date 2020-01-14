@@ -107,8 +107,8 @@ if [ "$PUSH_IMAGES" = "true" ]; then
 	make IMAGE=$TARGET_IMAGE deploy
 
 	if [ -n "$EXTRA_TAG" ]; then
-		docker tag $TARGET_IMAGE balena/$ARCH-supervisor:$EXTRA_TAG
-		make IMAGE=balena/$ARCH-supervisor:$EXTRA_TAG deploy
+		docker tag $TARGET_IMAGE mwohlert/$ARCH-supervisor:$EXTRA_TAG
+		make IMAGE=mwohlert/$ARCH-supervisor:$EXTRA_TAG deploy
 	fi
 fi
 
