@@ -104,7 +104,7 @@ export DOCKER_BUILD_OPTIONS="${DOCKER_BUILD_OPTIONS} --cache-from ${NODE_IMAGE}"
 make IMAGE=$TARGET_IMAGE supervisor
 
 if [ "$PUSH_IMAGES" = "true" ]; then
-	make IMAGE=$TARGET_IMAGE deploy
+	make IMAGE=$TARGET_IMAGE deploy &
 
 	if [ -n "$EXTRA_TAG" ]; then
 		docker tag $TARGET_IMAGE mwohlert/$ARCH-supervisor:$EXTRA_TAG
